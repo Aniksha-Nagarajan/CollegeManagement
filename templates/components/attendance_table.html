@@ -1,0 +1,72 @@
+<div class="table-card">
+
+    <h2>Attendance Records</h2>
+
+    <table>
+
+        <thead>
+
+            <tr>
+
+                <th>Attendance ID</th>
+
+                <th>Student Name</th>
+
+                <th>Register No</th>
+
+                <th>Date</th>
+
+                <th>Subject</th>
+
+                <th>Status</th>
+
+                <th>Remarks</th>
+
+            </tr>
+
+        </thead>
+
+
+        <tbody>
+
+            {% for attendance in attendance_records %}
+
+            <tr>
+
+                <td>
+                    {{ attendance.AttendanceId }}
+                </td>
+
+                <td>
+                    {{ attendance.StudentName }}
+                </td>
+
+                <td>
+                    {{ attendance.RegisterNo }}
+                </td>
+
+                <td>
+                    {{ attendance.Date }}
+                </td>
+
+                <td>
+                    {{ attendance.Subject }}
+                </td>
+
+                <td>
+                    {{ attendance.Status }}
+                </td>
+
+                <td>
+                    {{ attendance.Remarks }}
+                </td>
+
+            </tr>
+
+            {% endfor %}
+
+        </tbody>
+
+    </table>
+
+</div>

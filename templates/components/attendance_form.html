@@ -1,0 +1,113 @@
+<div class="form-card">
+
+    <h2>Student Attendance</h2>
+
+    <form action="/add_attendance" method="POST">
+
+        <div class="form-grid">
+
+            <!-- Student -->
+
+            <div class="form-group">
+
+                <label>Student</label>
+
+                <select name="StudentId" required>
+
+                    <option value="">
+                        Select Student
+                    </option>
+
+                    {% for student in students %}
+
+                    <option value="{{ student.StudentId }}">
+
+                        {{ student.StudentName }}
+                        - {{ student.RegisterNo }}
+
+                    </option>
+
+                    {% endfor %}
+
+                </select>
+
+            </div>
+
+
+            <!-- Date -->
+
+            <div class="form-group">
+
+                <label>Date</label>
+
+                <input type="date"
+                       name="Date"
+                       required>
+
+            </div>
+
+
+            <!-- Subject -->
+
+            <div class="form-group">
+
+                <label>Subject</label>
+
+                <input type="text"
+                       name="Subject"
+                       placeholder="Enter subject"
+                       required>
+
+            </div>
+
+
+            <!-- Status -->
+
+            <div class="form-group">
+
+                <label>Status</label>
+
+                <select name="Status" required>
+
+                    <option value="">
+                        Select Status
+                    </option>
+
+                    <option value="Present">
+                        Present
+                    </option>
+
+                    <option value="Absent">
+                        Absent
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- Remarks -->
+
+            <div class="form-group full-width">
+
+                <label>Remarks</label>
+
+                <textarea name="Remarks"
+                          rows="3"
+                          placeholder="Enter remarks"></textarea>
+
+            </div>
+
+        </div>
+
+
+        <button type="submit"
+                class="submit-btn">
+
+            Add Attendance
+
+        </button>
+
+    </form>
+
+</div>

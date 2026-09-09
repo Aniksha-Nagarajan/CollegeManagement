@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Student Attendance</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<header class="header">
+
+    <div class="header-content">
+
+        <div class="title-section">
+
+            <h1>College Management System</h1>
+
+            <p>Student Attendance Management</p>
+
+        </div>
+
+
+        <nav class="navigation">
+
+            <a href="{{ url_for('index') }}"
+               class="nav-btn">
+                Student Information
+            </a>
+
+            <a href="{{ url_for('attendance') }}"
+               class="nav-btn active">
+                Student Attendance
+            </a>
+
+            <a href="{{ url_for('marks') }}"
+               class="nav-btn">
+                Student Marks
+            </a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+<main class="container">
+
+    <div class="form-card">
+
+        <h2>Student Attendance</h2>
+
+        <form action="{{ url_for('add_attendance') }}"
+              method="POST">
+
+            <div class="form-grid">
+
+
+                <div class="form-group">
+
+                    <label>Student</label>
+
+                    <select name="StudentId" required>
+
+                        <option value="">
+                            Select Student
+                        </option>
+
+                        {% for student in students %}
+
+                        <option value="{{ student.StudentId }}">
+
+                            {{ student.StudentName }}
+                            - {{ student.RegisterNo }}
+
+                        </option>
+
+                        {% endfor %}
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Date</label>
+
+                    <input type="date"
+                           name="Date"
+                           required>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Subject</label>
+
+                    <input type="text"
+                           name="Subject"
+                           placeholder="Enter subject"
+                           required>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Status</label>
+
+                    <select name="Status" required>
+
+                        <option value="">
+                            Select Status
+                        </option>
+
+                        <option value="Present">
+                            Present
+                        </option>
+
+                        <option value="Absent">
+                            Absent
+                        </option>
+
+                        <option value="Leave">
+                            Leave
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group full-width">
+
+                    <label>Remarks</label>
+
+                    <textarea name="Remarks"
+                              rows="4"
+                              placeholder="Enter remarks"></textarea>
+
+                </div>
+
+
+            </div>
+
+
+            <button type="submit"
+                    class="submit-btn">
+
+                Add Attendance
+
+            </button>
+
+        </form>
+
+    </div>
+
+
+    <div class="table-card">
+
+        <h2>Attendance Records</h2>
+
+        <div class="table-container">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>Attendance ID</th>
+                        <th>Student Name</th>
+                        <th>Register No</th>
+                        <th>Date</th>
+                        <th>Subject</th>
+                        <th>Status</th>
+                        <th>Remarks</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    {% for record in attendance_records %}
+
+                    <tr>
+
+                        <td>
+                            {{ record.AttendanceId }}
+                        </td>
+
+                        <td>
+                            {{ record.StudentName }}
+                        </td>
+
+                        <td>
+                            {{ record.RegisterNo }}
+                        </td>
+
+                        <td>
+                            {{ record.Date }}
+                        </td>
+
+                        <td>
+                            {{ record.Subject }}
+                        </td>
+
+                        <td>
+                            {{ record.Status }}
+                        </td>
+
+                        <td>
+                            {{ record.Remarks }}
+                        </td>
+
+                    </tr>
+
+                    {% else %}
+
+                    <tr>
+
+                        <td colspan="7"
+                            class="no-records">
+
+                            No attendance records found.
+
+                        </td>
+
+                    </tr>
+
+                    {% endfor %}
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</main>
+
+</body>
+</html>

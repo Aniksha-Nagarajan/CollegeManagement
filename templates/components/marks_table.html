@@ -1,0 +1,35 @@
+<div class="form-card">
+    <h2>Marks Records</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Marks ID</th>
+                <th>Student</th>
+                <th>Register No</th>
+                <th>Subject ID</th>
+                <th>Internal</th>
+                <th>External</th>
+                <th>Total</th>
+                <th>Grade</th>
+                <th>Result</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for marks in marks_records %}
+
+            <tr>
+                <td>{{ marks.MarksId }}</td>
+                <td>{{ marks.StudentName }}</td>
+                <td>{{ marks.RegisterNo }}</td>
+                <td>{{ marks.Subject ID }}</td>
+                <td>{{ marks.Internal }}</td>
+                <td>{{ marks.External }}</td>
+                <td>{{ marks.Total }}</td>
+                <td>{{ marks.Grade }}</td>
+                <td>{{ marks.Result }}</td>
+            </tr>
+
+            {% endfor %}
+        </tbody>
+    </table>
+</div>            

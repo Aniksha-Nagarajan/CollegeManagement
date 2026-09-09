@@ -1,0 +1,61 @@
+<div class="table-card">
+
+    <h2>Student Records</h2>
+
+    <div class="table-container">
+
+        <table>
+
+            <thead>
+                <tr>
+                    <th>Student ID</th>
+                    <th>Student Name</th>
+                    <th>Register No</th>
+                    <th>Department</th>
+                    <th>Year</th>
+                    <th>Gender</th>
+                    <th>Date of Birth</th>
+                    <th>Phone No</th>
+                    <th>Email</th>
+                    <th>Address</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                {% if students %}
+
+                    {% for student in students %}
+
+                    <tr>
+                        <td>{{ student.StudentId }}</td>
+                        <td>{{ student.StudentName }}</td>
+                        <td>{{ student.RegisterNo }}</td>
+                        <td>{{ student.Department }}</td>
+                        <td>{{ student.Year }}</td>
+                        <td>{{ student.Gender }}</td>
+                        <td>{{ student.DateOfBirth }}</td>
+                        <td>{{ student.PhoneNo }}</td>
+                        <td>{{ student.Email }}</td>
+                        <td>{{ student.Address }}</td>
+                    </tr>
+
+                    {% endfor %}
+
+                {% else %}
+
+                    <tr>
+                        <td colspan="10" class="no-data">
+                            No student records found
+                        </td>
+                    </tr>
+
+                {% endif %}
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>

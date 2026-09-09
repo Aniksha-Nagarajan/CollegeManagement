@@ -1,0 +1,242 @@
+<div class="form-card">
+
+    <h2>Student Information</h2>
+
+
+    <form action="/add_student" method="POST">
+
+
+        <div class="form-grid">
+
+
+            <!-- Student Name -->
+
+            <div class="form-group">
+
+                <label for="StudentName">
+                    Student Name
+                </label>
+
+                <input
+                    type="text"
+                    id="StudentName"
+                    name="StudentName"
+                    placeholder="Enter student name"
+                    pattern="[A-Za-z ]+"
+                    title="Student name should contain only letters and spaces"
+                    required
+                >
+
+            </div>
+
+
+            <!-- Register Number -->
+
+            <div class="form-group">
+
+                <label for="RegisterNo">
+                    Register No
+                </label>
+
+                <input
+                    type="text"
+                    id="RegisterNo"
+                    name="RegisterNo"
+                    placeholder="Enter register number"
+                    required
+                >
+
+            </div>
+
+
+            <!-- Department -->
+
+            <div class="form-group">
+
+                <label for="Department">
+                    Department
+                </label>
+
+                <input
+                    type="text"
+                    id="Department"
+                    name="Department"
+                    placeholder="Enter department"
+                    required
+                >
+
+            </div>
+
+
+            <!-- Year -->
+
+            <div class="form-group">
+
+                <label for="Year">
+                    Year
+                </label>
+
+                <select
+                    id="Year"
+                    name="Year"
+                    required
+                >
+
+                    <option value="">
+                        Select Year
+                    </option>
+
+                    <option value="1">
+                        1st Year
+                    </option>
+
+                    <option value="2">
+                        2nd Year
+                    </option>
+
+                    <option value="3">
+                        3rd Year
+                    </option>
+
+                    <option value="4">
+                        4th Year
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- Gender -->
+
+            <div class="form-group">
+
+                <label for="Gender">
+                    Gender
+                </label>
+
+                <select
+                    id="Gender"
+                    name="Gender"
+                    required
+                >
+
+                    <option value="">
+                        Select Gender
+                    </option>
+
+                    <option value="Male">
+                        Male
+                    </option>
+
+                    <option value="Female">
+                        Female
+                    </option>
+
+                    <option value="Other">
+                        Other
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- Date of Birth -->
+
+            <div class="form-group">
+
+                <label for="DateOfBirth">
+                    Date of Birth
+                </label>
+
+                <input
+                    type="date"
+                    id="DateOfBirth"
+                    name="DateOfBirth"
+                    required
+                >
+
+            </div>
+
+
+            <!-- Phone Number -->
+
+            <div class="form-group">
+
+                <label for="PhoneNo">
+                    Phone Number
+                </label>
+
+                <input
+                    type="tel"
+                    id="PhoneNo"
+                    name="PhoneNo"
+                    placeholder="Enter 10 digit phone number"
+                    pattern="[0-9]{10}"
+                    maxlength="10"
+                    title="Phone number must contain exactly 10 digits"
+                    required
+                >
+
+            </div>
+
+
+            <!-- Email -->
+
+            <div class="form-group">
+
+                <label for="Email">
+                    Email
+                </label>
+
+                <input
+                    type="email"
+                    id="Email"
+                    name="Email"
+                    placeholder="example@gmail.com"
+                    pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
+                    title="Enter a valid email address such as example@gmail.com"
+                    required
+                >
+
+            </div>
+
+
+            <!-- Address -->
+
+            <div class="form-group full-width">
+
+                <label for="Address">
+                    Address
+                </label>
+
+                <textarea
+                    id="Address"
+                    name="Address"
+                    rows="4"
+                    placeholder="Enter address"
+                    required
+                ></textarea>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- Submit Button -->
+
+        <button
+            type="submit"
+            class="submit-btn"
+        >
+
+            Add Student
+
+        </button>
+
+
+    </form>
+
+</div>

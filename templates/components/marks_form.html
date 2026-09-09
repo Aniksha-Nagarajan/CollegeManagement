@@ -1,0 +1,30 @@
+<div class="form-card">
+    <h2>Student Marks</h2>\
+    <form action="/add_marks" method="POST">
+        <div class="form-grid">
+            <div class="form-group">
+                <label>Student</label>
+                <select name="StudentId" required>
+                    <option value="">Select Student</option>
+                    {% for student in students %}
+                        <option value="{{ student.StudentId }}">{{ student.StudentName }}-{{ student.RegisterNo }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Subject ID</label>
+                <input type="text" name="Subject" placeholder="Enter subject ID" required>
+            </div>
+            <div class="form-group">
+                <label>Internal Marks</label>
+                <input type="number" name="InternalMarks" placeholder="Enter internal marks" min="0" max="40" required>
+            </div>
+            <div class="form-group">
+                <label>External Marks</label>
+                <input type="number" name="ExternalMarks" placeholder="Enter external marks" min="0" max="60" required>
+            </div>
+        </div>
+
+        <button type="submit" class="submit-btn">Add Marks</button>
+    </form>    
+</div>

@@ -1,5 +1,9 @@
 from flask import Flask, render_template, request, redirect, url_for
 import mysql.connector
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 app = Flask(__name__)
 
@@ -9,16 +13,12 @@ app = Flask(__name__)
 # ==========================================
 
 def get_db_connection():
-
-    connection = mysql.connector.connect(
+    return mysql.connector.connect(
         host="localhost",
         user="root",
         password=os.getenv("DB_PASSWORD"),
         database="CollegeManagement"
     )
-
-    return connection
-
 
 # ==========================================
 # STUDENT INFORMATION
